@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Korban oleh Robot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Deteksi Korban oleh Robot</h1>
+
+        <div id="result">
+            <h2>Hasil Deteksi Korban</h2>
+            {% if image_url %}
+                <p id="status">Korban terdeteksi</p>
+                <img id="detectedImage" src="{{ image_url }}" alt="Gambar Korban Terdeteksi">
+                <p id="timestamp">Waktu Deteksi: {{ timestamp }}</p>
+            {% else %}
+                <p id="status">Belum ada gambar korban yang dikirim.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
